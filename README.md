@@ -132,11 +132,11 @@ X-R1 use 4x3090 ~16h training 3B-base with 7.5k chinese math problem.
 1. multi-gpu run:
 
 ```bash
-ACCELERATE_LOG_LEVEL=info 
-accelerate launch 
---config_file recipes/zero3.yaml 
---num_processes=3 src/x_r1/grpo.py 
---config recipes/examples/X_R1_zero_7B_peft_usevllm_config.yaml.yaml
+ACCELERATE_LOG_LEVEL=info \
+accelerate launch \
+--config_file recipes/zero3.yaml \
+--num_processes=3 src/x_r1/grpo.py \
+--config recipes/examples/X_R1_zero_7B_peft_usevllm_config.yaml \
 > ./output/test_7b_lora_sampling.log 2>&1
 ```
 
